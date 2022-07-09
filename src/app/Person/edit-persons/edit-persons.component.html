@@ -1,0 +1,38 @@
+<main class="container form-signin w-100 m-auto">
+    <div class="container col-md-6 col-md-offset-6">
+        <br>
+        <h1 class="h3 mb-3 fw-normal">Edit Person</h1>
+
+        <div class="form-floating">
+            <input [(ngModel)]="person.email" type="email" class="form-control" 
+                placeholder="name@example.com">
+            <label for="">Email address</label>
+        </div>
+        <br>
+        <div class="form-floating">
+            <input [(ngModel)]="person.dob" type="datetime" class="form-control" 
+                placeholder="Name">
+            <label for="">Date of Birth</label>
+        </div>
+        <br>
+        <div class="">
+            <select [(ngModel)]="person.country" id="" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                <option selected value="" >Choose Country</option>
+                <option *ngFor="let country of countries" value="{{country}}">{{country}}</option>
+            </select>
+        </div>
+        <br>
+        <div class="form-floating">
+            <input [(ngModel)]="person.avatar" type="text" class="form-control"
+                placeholder="Enter Avatar Link">
+            <label for="">Avatar Link</label>
+        </div>
+        <br>
+        <hr>
+        <a (click)="save()" class="w-100 btn btn-lg btn-success" type="submit">Save</a>
+        <br>
+        <br>
+        <a (click)="delete()" class="w-100 btn btn-lg btn-danger" type="submit">Delete</a>
+        <br><br>
+    </div>
+</main>

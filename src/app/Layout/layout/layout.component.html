@@ -1,0 +1,29 @@
+
+<!-- Navbar -->
+<div class="">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+        <svg class="bi me-2" width="40" height="32">
+          <use xlink:href="#bootstrap"></use>
+        </svg>
+        <span class="fs-4">MedTech Task</span>
+      </a>
+  
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a routerLink="/" class="nav-link " aria-current="page">Home</a></li>
+        <li class="nav-item"><a routerLink="/add" class="nav-link">Add Person</a></li>
+      </ul>
+    </header>
+  </div>
+  
+<!-- Rendered body -->
+<router-outlet></router-outlet>
+
+<!-- Footer -->
+<div class="container">
+  <footer class="pt-4">
+    <div class="d-flex flex-column flex-sm-row justify-content-between pt-4 my-4 border-top">
+      <p>© 2022 Mostafa Gad, Inc. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
