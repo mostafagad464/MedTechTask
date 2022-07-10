@@ -4,13 +4,19 @@
         <h1 class="h3 mb-3 fw-normal">Create New Person</h1>
 
         <div class="form-floating">
+            <input [(ngModel)]="person.name" type="text" class="form-control" 
+                placeholder="Name">
+            <label for="">Name</label>
+        </div>
+        <br>
+        <div class="form-floating">
             <input [(ngModel)]="person.email" type="email" class="form-control" 
                 placeholder="name@example.com">
             <label for="">Email address</label>
         </div>
         <br>
         <div class="form-floating">
-            <input [(ngModel)]="person.dob" type="date" class="form-control" 
+            <input [(ngModel)]="person.dob" type="datetime" class="form-control" 
                 placeholder="Name">
             <label for="">Date of Birth</label>
         </div>

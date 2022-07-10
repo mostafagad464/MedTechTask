@@ -2,7 +2,12 @@
     <div class="container col-md-6 col-md-offset-6">
         <br>
         <h1 class="h3 mb-3 fw-normal">Edit Person</h1>
-
+        <div class="form-floating">
+            <input [(ngModel)]="person.name" type="text" class="form-control" 
+                placeholder="Name">
+            <label for="">Name</label>
+        </div>
+        <br>
         <div class="form-floating">
             <input [(ngModel)]="person.email" type="email" class="form-control" 
                 placeholder="name@example.com">
@@ -27,10 +32,9 @@
                 placeholder="Enter Avatar Link">
             <label for="">Avatar Link</label>
         </div>
-        <br>
         <hr>
-        <a (click)="save()" class="w-100 btn btn-lg btn-success" type="submit">Save</a>
-        <br>
+        <!-- <a (click)="save()" class="w-100 btn btn-lg btn-success" type="submit">Save</a> -->
+        <!-- <br> -->
         <br>
         <a (click)="delete()" class="w-100 btn btn-lg btn-danger" type="submit">Delete</a>
         <br><br>

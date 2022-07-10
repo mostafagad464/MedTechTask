@@ -4,6 +4,7 @@ import { Person } from 'src/app/_models/person';
 import { PersonService } from 'src/app/_services/person.service';
 import { Input } from '@angular/core';
 import { CountryService } from 'src/app/_services/country.service';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-edit-persons',
@@ -18,7 +19,8 @@ export class EditPersonsComponent implements OnInit {
 
   @Input() id = 0;
 
-  constructor(private personService:PersonService, private router:Router, private countryService:CountryService) { }
+  constructor(private personService:PersonService, private router:Router, 
+    private countryService:CountryService, private activeModal:NgbActiveModal) { }
 
   ngOnInit(): void {
     this.countryService.getCounteries().subscribe(
@@ -29,16 +31,25 @@ export class EditPersonsComponent implements OnInit {
         });
       }
     )
-    this.personService.getPerson(this.id).subscribe(
-      person=>{
-        this.person = person;
-      }
-    )
+    this.person = this.personService.getPerson(this.id);
+    // this.personService.getPerson(this.id).subscribe(
+    //   person=>{
+    //     this.person = person;
+    //   }
+    // )
+  }
+
+  close(){
+    this.activeModal.close();
   }
 
   delete(){
     this.personService.deletePerson(this.id).subscribe(
-      a=> this.router.navigate([''])
+      (a)=> 
+      {
+        console.log(this.personService.persons);
+        this.router.navigate(['']);
+      }
     )
   }
 
